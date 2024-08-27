@@ -110,3 +110,8 @@ The added [requirements file](requirements.txt) contains all libraries and depen
     python.exe -m pip install --upgrade pip
     ```
 Source for the environment settings: NeueFische
+
+## Load the data to your notebook:
+In any notebook, to quickly load datasets, run the following code in a new cell at the beginning of your notebook:
+
+```%run importing_data.ipynb```
