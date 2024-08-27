@@ -1,5 +1,5 @@
 # book_recommendation101
-A very basic first attempt at creating a book recommendation system using the data from https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks
+A very basic first attempt at creating a book recommendation system using the data from [here](https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks) as well as [here](https://github.com/Shantanuh10/Book-Recommendation-System?tab=readme-ov-file)
 ## Set up your Environment
 
 Please make sure you have forked the repo and set up a new virtual environment.
@@ -114,4 +114,4 @@ Source for the environment settings: NeueFische
 ## Load the data to your notebook:
 In any notebook, to quickly load datasets, run the following code in a new cell at the beginning of your notebook:
 
-```%run importing_data.ipynb```
+```%run import_data.ipynb```
