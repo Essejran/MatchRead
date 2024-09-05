@@ -21,3 +21,4 @@ numpy
 pandas
 re
 requests
+python-dateutil

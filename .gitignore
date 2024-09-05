@@ -162,3 +162,7 @@ cython_debug/
 #.idea/
 
 data/books2.csv
+data/test_big_cleaned.csv
+data/test_big_2.csv
+data/big_detailed.csv
+
