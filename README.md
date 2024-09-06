@@ -40,6 +40,8 @@ If nothing shows up:
 ```bash
 git lfs track "data.zip"
 git lfs track data/
+git add .gitattributes
+git commit -m"added .gitattributes for LFS tracking"
 ```
 
 ### II. Set up your Environment
