@@ -27,7 +27,7 @@ sudo apt-get install git-lfs
 git clone git@github.com:Essejran/MatchRead.git
 ```
 
-#### 3. Initialize Git LFS
+#### 3. Navigate to the repo (cd...) & Initialize Git LFS
 ```bash
 git lfs install
 ```
@@ -36,12 +36,18 @@ git lfs install
 ```bash
 git lfs ls-files
 ```
+
 If nothing shows up:
 ```bash
 git lfs track "data.zip"
 git lfs track data/
 git add .gitattributes
 git commit -m"added .gitattributes for LFS tracking"
+```
+
+Now check again, at least data.zip should show up:
+```bash
+git lfs ls-files
 ```
 
 ### II. Set up your Environment
