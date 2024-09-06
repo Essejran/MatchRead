@@ -1,10 +1,43 @@
 # book_recommendation101
 A very basic first attempt at creating a book recommendation system using the data from [here](https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks) as well as [here](https://github.com/Shantanuh10/Book-Recommendation-System?tab=readme-ov-file)
-## Set up your Environment
 
-Please make sure you have forked the repo and set up a new virtual environment.
+## Getting Started with This Repository
 
-The added [requirements file](requirements.txt) contains all libraries and dependencies we need to execute the NLP notebooks.
+### I. BEFORE CLONING THE REPO:
+This repository uses a zipped data directory (data.zip) and the unzipped version is in .gitignore.
+This repository uses Git Large File Storage (LFS) to handle large files. To ensure that you can clone and work with the repository effectively, follow these steps:
+
+### 1. Install Git LFS
+
+Before cloning the repository, you need to install Git LFS:
+
+- **macOS:**
+```bash
+brew install git-lfs
+```
+- **linux:**
+```bash
+sudo apt-get install git-lfs
+```
+- **windows:**
+  Download the installer from [Git LFS](https://git-lfs.com/).
+
+#### 2. Initialize Git LFS
+```bash
+git lfs install
+```
+
+#### 3. Clone this repo 
+```bash
+git clone git@github.com:Essejran/MatchRead.git
+```
+
+#### 4. Verify large files:
+```bash
+git lfs ls-files
+```
+
+### II. Set up your Environment
 
 **`Note:`**
 
