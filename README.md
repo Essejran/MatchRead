@@ -22,19 +22,24 @@ sudo apt-get install git-lfs
 - **windows:**
   Download the installer from [Git LFS](https://git-lfs.com/).
 
-#### 2. Initialize Git LFS
-```bash
-git lfs install
-```
-
-#### 3. Clone this repo 
+#### 2. Clone this repo 
 ```bash
 git clone git@github.com:Essejran/MatchRead.git
+```
+
+#### 3. Initialize Git LFS
+```bash
+git lfs install
 ```
 
 #### 4. Verify large files:
 ```bash
 git lfs ls-files
+```
+If nothing shows up:
+```bash
+git lfs track "data.zip"
+git lfs track data/
 ```
 
 ### II. Set up your Environment
