@@ -19,6 +19,5 @@ aiohttp
 gensim
 numpy
 pandas
-re
 requests
 python-dateutil
