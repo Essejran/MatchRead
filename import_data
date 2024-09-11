@@ -1,0 +1,34 @@
+
+import pandas as pd
+
+response = input("Have you pulled an updated version of data.zip that you need to unzip again now? (yes/no): ").strip().lower()
+
+if response == 'yes':
+    print("Unzipping to update your data folder...")
+    import zipfile
+    import os
+    zip_file_path = 'data.zip'
+    extract_dir = 'data/'
+    with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_dir)
+    print("Data folder updated successfully")
+else:
+    print("Continuing with existing version of data folder")
+
+books_goodreads = pd.read_csv('data/goodreads_detailed.csv', sep=',', header=0)
+print("Goodreads dataset loaded successfully as books_goodreads")
+
+books_big = pd.read_csv("data/df_clean.csv", sep=";", encoding="utf-8", engine="python", na_filter=True)
+ratings = pd.read_csv('data/ratings.csv', sep=',', header=0)
+users = pd.read_csv('data/users.csv', sep=',', header=0)
+print("Pandas dataframes (books_goodreads, books_big, book, users, ratings) loaded successfully")
+
+# Cleaning the column names:
+users.columns = users.columns.str.lower().str.replace('-', '_')
+ratings.columns = ratings.columns.str.lower().str.replace('-', '_')
+print("Columns in DataFrames 'users' and 'ratings' renamed")
+
+books = books_big.copy()
+print("You can use the DataFrames 'books' or 'books_big' - they are exactly the same (big) dataset")
+
+print("Ready to go!")
