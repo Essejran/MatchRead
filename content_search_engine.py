@@ -26,7 +26,7 @@ def search_books(query, raters_15plus):
     # => Term Frequency-Inverse Document Frequency
 
     vectorizer = TfidfVectorizer()
-    tdidf = vectorizer.fit_transform(raters_15plus['mod_titles'])
+    tdidf = vectorizer.fit_transform(raters_15plus['mod_title'])
     ###
     processed_query = re.sub('[^a-zA-Z0-9]', ' ', query.lower())
     query_vector = vectorizer.transform([processed_query])
@@ -40,13 +40,17 @@ def search_books(query, raters_15plus):
     return results.head(10)
 
 #################### TESTING SECTION ##########################################
-if __name__ == "__main__":
-    # Step 1: Load the datasets
-    books_ratings, books_users_ratings, raters_15plus = load_data()
+###### 1. uncomment following code block
+###### 2. in terminal, run: python content_search_engine.py
+
+# if __name__ == "__main__":
+#     # Step 1: Load the datasets
+#     books_ratings, books_users_ratings, raters_15plus = load_data()
     
-    # Step 2: Testing the search_books function
-    print("\nTesting content-based search_books function:")
-    test_query = "Harry Potter"  # Simulate a user input for the search query
-    search_results = search_books(test_query, raters_15plus)
-    print("Search Results:\n", search_results)
+#     # Step 2: Testing the search_books function
+#     print("\nTesting content-based search_books function:")
+#     test_query = "Harry Potter"  # Simulate a user input for the search query
+#     search_results = search_books(test_query, raters_15plus)
+#     print("Search Results:\n", search_results)
+
 ###############################################################################
