@@ -63,14 +63,18 @@ def recommend_books(liked_books, books_users_ratings):
 
 
 #################### TESTING SECTION ##########################################
-if __name__ == "__main__":
-    # Step 1: Load the datasets
-    books_ratings, books_users_ratings, raters_15plus = load_data()
+###### 1. uncomment following code block
+###### 2. in terminal, run: python collab_filtering_recommender.py
+
+# if __name__ == "__main__":
+#     # Step 1: Load the datasets
+#     books_ratings, books_users_ratings, raters_15plus = load_data()
     
-    # Step 2: Testing the recommend_books function
-    print("\nTesting collaborative filtering recommend_books function:")
-    liked_books = ['006440546X', '1929462379', '1853263451', '1891575139', 
-                   '9505811322', '1561840718']
-    recommendations = recommend_books(liked_books, books_users_ratings)
-    print("Recommendations:\n", recommendations)
+#     # Step 2: Testing the recommend_books function
+#     print("\nTesting collaborative filtering recommend_books function:")
+#     liked_books = ['006440546X', '1929462379', '1853263451', '1891575139', 
+#                    '9505811322', '1561840718']
+#     recommendations = recommend_books(liked_books, books_users_ratings)
+#     print("Recommendations:\n", recommendations)
+
 ###############################################################################
