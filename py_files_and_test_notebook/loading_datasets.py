@@ -10,7 +10,7 @@ def load_data():
     raters_15plus = pd.read_csv("../data/raters_15plus.csv", 
                                 sep=";", encoding="utf-8-sig")
     return books_ratings, books_users_ratings, raters_15plus
-print("To load the dataframes, run this line of code:")
-print('books_ratings, books_users_ratings, raters_15plus = load_data()')
+# print("To load the dataframes, run this line of code:")
+# print('books_ratings, books_users_ratings, raters_15plus = load_data()')
 
 

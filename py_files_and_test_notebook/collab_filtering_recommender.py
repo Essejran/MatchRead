@@ -1,9 +1,10 @@
 
 import pandas as pd
+from loading_datasets import load_data
 
 # Recommendation function based on collaborative filtering
-def recommender_cf(liked_books, books_users_ratings):
-
+def recommender_cf(liked_books):
+    books_users_ratings = load_data()[1]
     # Create data frame of unique users who like the same books as user
     filtered_ratings = books_users_ratings[books_users_ratings['isbn'].
                                            isin(liked_books) & 
@@ -38,9 +39,6 @@ def recommender_cf(liked_books, books_users_ratings):
                                         # each row 1 indiv. rating > 8
                                         # of all the other books they like
     recommended_2.columns = ['isbn', 'count']
-    
-    ########################################### Is this supposed to merge with
-    ########################################### total_books or raters_15plus?
     recommended_with_titles = pd.merge(recommended_2, 
                                        total_books[['isbn', 'book_title', 
                                                     'image_url_m']], 
