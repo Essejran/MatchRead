@@ -17,6 +17,22 @@ def load_data():
                                 sep=";", encoding="utf-8-sig")
     return books_ratings, books_users_ratings, raters_15plus
 
+############### FLAGGING CRITICAL AUTHORS #####################################
+
+# Create a dictionary of authors and their problematic behavior
+problematic_authors = {
+    'john grisham': 'Made problematic comments in 2014. Please make your own research for more information. TW: Child pornography',
+    'james patterson': 'Made problematic comments in 2022. Please make your own research for more information.',
+    'j k rowling': 'Made transphobic comments. Please make your own research for more information.',
+    'nicholas sparks': 'Accused of promoting racism, homophobia and discrimination. please make your own research for more information.',
+    'piers anthony' : 'Inappropriate comments in his work. Please make your own research for more information. TW: Underage sexual relations'
+}
+
+# Create a new column with problematic messages
+books_users_ratings['problematic_author'] = books_users_ratings['book_author'].apply(
+    lambda author: problematic_authors.get(author, '')
+)
+
 ###############################################################################
 
 # Search function based on content (content-based filtering)
@@ -36,6 +52,23 @@ def search_books(query, raters_15plus):
     
     results = raters_15plus.iloc[indices]
     results = results.sort_values(by='nr_ratings', ascending=False)
+
+    # Step 7: Loop through the results and add problematic author descriptions if applicable
+    for index, row in results.iterrows():
+        book_title = row['mod_titles']
+        author = row['book_author']
+        # rating = row['book_rating']
+        rating_count = row['nr_ratings']
+        
+        # Print the book details
+        print(f"Book: {book_title} by {author}")
+        # print(f"Rating: {rating}, Number of Ratings: {rating_count}")
+        
+        # Check if the author is flagged as problematic and print the message if applicable
+        if author in problematic_authors:
+            print(f"⚠️ {problematic_authors[author]}")
+        
+        print() 
     
     return results.head(10)
 
