@@ -8,7 +8,7 @@ if response == 'yes':
     import zipfile
     import os
     zip_file_path = '../data.zip'
-    extract_dir = '../data/'
+    extract_dir = '../'
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         zip_ref.extractall(extract_dir)
     print("Data folder updated successfully")
