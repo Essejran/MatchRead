@@ -1,20 +1,6 @@
 
 import pandas as pd
 
-response = input("Have you pulled an updated version of data.zip that you need to unzip again now? (yes/no): ").strip().lower()
-
-if response == 'yes':
-    print("Unzipping to update your data folder...")
-    import zipfile
-    import os
-    zip_file_path = 'data.zip'
-    extract_dir = 'data/'
-    with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-        zip_ref.extractall(extract_dir)
-    print("Data folder updated successfully")
-else:
-    print("Continuing with existing version of data folder")
-
 books_goodreads = pd.read_csv('data/goodreads_detailed.csv', sep=',', header=0)
 print("Goodreads dataset loaded successfully as books_goodreads")
 
