@@ -158,6 +158,7 @@ git lfs ls-files
 Source for the environment settings: NeueFische
 
 ## Load the data to your notebook:
-In any notebook, to quickly load datasets, run the following code in a new cell at the beginning of your notebook:
 
-```%run import_data.ipynb```
+1. Download [data.zip]("https://matchread.s3.eu-north-1.amazonaws.com/data.zip") and unzip it
+
+2. In any notebook inside the Notebooks/ folder, to quickly load datasets, run the following code in a new cell at the beginning of your notebook: ```%run import_data_.ipynb```
