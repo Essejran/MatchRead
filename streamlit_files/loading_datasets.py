@@ -12,7 +12,7 @@ data_folder = os.path.join(os.path.dirname(__file__), "..", "data")
 
 books_ratings_path = os.path.join(data_folder, "books_rated.csv")
 books_users_ratings_path = os.path.join(data_folder, "books_users_ratings.csv")
-raters_15plus = os.path.join(data_folder, "raters_15plus.csv")
+raters_15plus_path = os.path.join(data_folder, "raters_15plus.csv")
 streamlit_df_path = os.path.join(data_folder, "streamlit_df.csv")
 
 def load_data():
@@ -20,7 +20,7 @@ def load_data():
                                 sep=";", encoding="utf-8-sig")
     books_users_ratings = pd.read_csv(books_users_ratings_path, 
                                       sep=";", encoding="utf-8-sig")
-    raters_15plus = pd.read_csv(raters_15plus, 
+    raters_15plus = pd.read_csv(raters_15plus_path, 
                                 sep=";", encoding="utf-8-sig")
     streamlit_df = pd.read_csv(streamlit_df_path, 
                                 sep=";", encoding="utf-8-sig")
